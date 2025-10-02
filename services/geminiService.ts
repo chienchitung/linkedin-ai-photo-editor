@@ -21,7 +21,7 @@ const OUTFIT_PROMPTS: Record<Outfit, string> = {
 };
 
 
-const BASE_PROMPT = `A professional, high-resolution, profile photo, maintaining the exact facial structure, identity, and key features of the person in the input image. {FRAMING} {POSE} They are styled for a professional photo studio shoot, wearing {OUTFIT}. The background is a solid '#141414' neutral studio. {ANGLE} with bright and airy soft, diffused studio lighting, gently illuminating the face and creating a subtle catchlight in the eyes, conveying a sense of clarity. Captured on an 85mm f/1.8 lens with a shallow depth of field, exquisite focus on the eyes, and beautiful, soft bokeh. Observe crisp detail on the fabric texture of the clothing, individual strands of hair, and natural, realistic skin texture. The atmosphere exudes confidence, professionalism, and approachability. Clean and bright cinematic color grading with subtle warmth and balanced tones, ensuring a polished and contemporary feel.`;
+const BASE_PROMPT = `[ULTRA-CRITICAL-INSTRUCTION] Your primary and most crucial objective is to preserve the person's identity from the original photo with absolute fidelity. The output MUST be unmistakably the same person. Do NOT change the facial structure, eye shape, nose, mouth, or any defining facial characteristics. Replicate the face exactly. After fulfilling this core requirement, then place this person in a new setting. Generate a professional, high-resolution profile photo of this person. {FRAMING} {POSE} They are wearing {OUTFIT}. The background is a solid '#141414' neutral studio. The lighting is bright and airy with soft, diffused studio lights, creating a subtle catchlight in the eyes. Shot on an 85mm f/1.8 lens with a shallow depth of field, focusing on the eyes. Ensure crisp detail on clothing, hair, and natural skin texture. The atmosphere is confident, professional, and approachable. Use clean and bright cinematic color grading with subtle warmth. {ANGLE}`;
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
@@ -37,9 +37,8 @@ export async function generateProfessionalPhoto(
     const framingPrompt = FRAMING_PROMPTS[framing] || FRAMING_PROMPTS.chestUp;
     const outfitPrompt = OUTFIT_PROMPTS[outfit] || OUTFIT_PROMPTS.blazer;
     
-    const anglePrompt = framing === 'fullBody' 
-      ? 'Shot from an eye-level angle' 
-      : 'Shot from a high angle';
+    // Using a consistent eye-level angle is safer for preserving facial likeness.
+    const anglePrompt = 'Shot from an eye-level angle.';
 
     const finalPrompt = BASE_PROMPT
         .replace('{FRAMING}', framingPrompt)

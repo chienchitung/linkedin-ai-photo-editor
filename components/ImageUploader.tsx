@@ -55,6 +55,23 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, ima
           </div>
         )}
       </div>
+      <div className="mt-6 text-left text-sm text-gray-600">
+        <h3 className="font-semibold text-gray-800 mb-2">{t('proTipsTitle')}</h3>
+        <ul className="space-y-1 list-inside">
+          <li className="flex items-start">
+            <svg className="w-4 h-4 mr-2 mt-0.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            <span>{t('tip1')}</span>
+          </li>
+          <li className="flex items-start">
+            <svg className="w-4 h-4 mr-2 mt-0.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            <span>{t('tip2')}</span>
+          </li>
+          <li className="flex items-start">
+            <svg className="w-4 h-4 mr-2 mt-0.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+            <span>{t('tip3')}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

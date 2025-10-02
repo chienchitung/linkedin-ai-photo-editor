@@ -29,4 +29,8 @@ export const en = {
   outfitSuit: "Formal Suit",
   outfitShirt: "Button-down Shirt",
   outfitTurtleneck: "Creative Turtleneck",
+  proTipsTitle: "Pro Tips for Best Results",
+  tip1: "Use a high-resolution, well-lit photo.",
+  tip2: "Face should be clear and looking forward.",
+  tip3: "Avoid photos with heavy filters or obstructions.",
 };

@@ -29,4 +29,8 @@ export const zh = {
   outfitSuit: "正式西裝",
   outfitShirt: "襯衫",
   outfitTurtleneck: "創意高領衫",
+  proTipsTitle: "獲得最佳效果的專業提示",
+  tip1: "使用高解析度、光線充足的照片。",
+  tip2: "臉部應清晰且直視前方。",
+  tip3: "避免使用帶有濃厚濾鏡或遮擋物的照片。",
 };
