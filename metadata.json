@@ -1,0 +1,5 @@
+{
+  "name": "LinkedIn AI Photo Editor",
+  "description": "Upload a photo and let our AI transform it into a professional, studio-quality profile picture perfect for LinkedIn, using Gemini's powerful image editing capabilities.",
+  "requestFramePermissions": []
+}
